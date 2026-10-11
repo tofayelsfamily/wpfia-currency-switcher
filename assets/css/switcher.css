@@ -1,0 +1,330 @@
+/* WPFIA Currency Switcher - Floating UI & Shortcode Styles */
+:root {
+    --wpfia-cs-primary: #2563eb;
+    --wpfia-cs-bg: #0f172a;
+    --wpfia-cs-surface: #1e293b;
+    --wpfia-cs-text: #f8fafc;
+    --wpfia-cs-text-muted: #94a3b8;
+    --wpfia-cs-border: #334155;
+}
+
+/* Floating Switcher */
+.wpfia-cs-floating {
+    position: fixed;
+    z-index: 99998;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.wpfia-cs-pos-bottom-left {
+    bottom: 24px;
+    left: 24px;
+}
+
+.wpfia-cs-pos-bottom-right {
+    bottom: 24px;
+    right: 24px;
+}
+
+.wpfia-cs-pos-top-left {
+    top: 24px;
+    left: 24px;
+}
+
+.wpfia-cs-pos-top-right {
+    top: 24px;
+    right: 24px;
+}
+
+/* Launcher Pill */
+.wpfia-cs-floating-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #0f172a;
+    color: #f8fafc;
+    border: 1px solid #334155;
+    padding: 8px 14px;
+    border-radius: 24px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.wpfia-cs-floating-toggle:hover {
+    background: #1e293b;
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37,99,235,0.25);
+}
+
+.wpfia-cs-pill-symbol {
+    color: #38bdf8;
+    font-weight: 700;
+}
+
+.wpfia-cs-pill-arrow {
+    font-size: 10px;
+    color: #94a3b8;
+    transition: transform 0.2s;
+}
+
+/* Dropdown Menu */
+.wpfia-cs-floating-menu {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    min-width: 180px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    overflow: hidden;
+    animation: wpfiaCsFadeIn 0.2s ease-out;
+}
+
+.wpfia-cs-pos-bottom-right .wpfia-cs-floating-menu,
+.wpfia-cs-pos-top-right .wpfia-cs-floating-menu {
+    left: auto;
+    right: 0;
+}
+
+.wpfia-cs-pos-top-left .wpfia-cs-floating-menu,
+.wpfia-cs-pos-top-right .wpfia-cs-floating-menu {
+    bottom: auto;
+    top: calc(100% + 8px);
+}
+
+@keyframes wpfiaCsFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.wpfia-cs-menu-header {
+    padding: 10px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #94a3b8;
+    border-bottom: 1px solid #1e293b;
+    background: #090d16;
+}
+
+.wpfia-cs-currency-list {
+    list-style: none;
+    margin: 0;
+    padding: 6px 0;
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.wpfia-cs-currency-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.wpfia-cs-currency-item:hover {
+    background: #1e293b;
+    color: #ffffff;
+}
+
+.wpfia-cs-currency-item.active {
+    background: rgba(37, 99, 235, 0.2);
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.wpfia-cs-item-code {
+    font-weight: 700;
+    margin-right: 6px;
+}
+
+.wpfia-cs-item-sym {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.wpfia-cs-item-check {
+    margin-left: auto;
+    color: #38bdf8;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Shortcode Dropdown */
+.wpfia-cs-dropdown-wrap {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.wpfia-cs-select {
+    background: #0f172a;
+    color: #f8fafc;
+    border: 1px solid #334155;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+
+.wpfia-cs-select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+/* ==========================================================================
+   Professional Placement 1: Topbar Header Strip
+   ========================================================================== */
+.wpfia-cs-topbar {
+    background: #0f172a;
+    color: #e2e8f0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+    padding: 7px 20px;
+    border-bottom: 1px solid #1e293b;
+    position: relative;
+    z-index: 99997;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.wpfia-cs-topbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.wpfia-cs-topbar-left .wpfia-cs-topbar-container {
+    flex-direction: row-reverse;
+}
+
+.wpfia-cs-topbar-msg {
+    color: #94a3b8;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.wpfia-cs-topbar-ctrl {
+    position: relative;
+}
+
+.wpfia-cs-topbar-btn {
+    background: transparent;
+    border: 1px solid #334155;
+    color: #f8fafc;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 11.5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s;
+}
+
+.wpfia-cs-topbar-btn:hover {
+    background: #1e293b;
+    border-color: #38bdf8;
+}
+
+.wpfia-cs-topbar-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    min-width: 160px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    z-index: 99999;
+}
+
+.wpfia-cs-topbar-left .wpfia-cs-topbar-menu {
+    right: auto;
+    left: 0;
+}
+
+/* ==========================================================================
+   Professional Placement 2: Header Navigation Menu Item
+   ========================================================================== */
+.wpfia-cs-menu-item {
+    position: relative;
+}
+
+.wpfia-cs-menu-item .wpfia-cs-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.wpfia-cs-menu-item .wpfia-cs-globe {
+    font-size: 13px;
+}
+
+.wpfia-cs-menu-item .wpfia-cs-arrow {
+    font-size: 10px;
+    opacity: 0.7;
+    transition: transform 0.2s;
+}
+
+.wpfia-cs-menu-item:hover .wpfia-cs-arrow {
+    transform: rotate(180deg);
+}
+
+.wpfia-cs-menu-item .wpfia-cs-sub-menu {
+    min-width: 150px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    padding: 6px 0;
+    margin: 0;
+    list-style: none;
+}
+
+.wpfia-cs-menu-item .wpfia-cs-currency-item a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.15s;
+}
+
+.wpfia-cs-menu-item .wpfia-cs-currency-item a:hover {
+    background: #f1f5f9;
+    color: #2563eb;
+}
+
+.wpfia-cs-menu-item .wpfia-cs-currency-item.active a {
+    color: #2563eb;
+    font-weight: 700;
+}
+
+.wpfia-cs-menu-item .wpfia-cs-item-check {
+    color: #10b981;
+    font-weight: 700;
+    margin-left: 8px;
+}
